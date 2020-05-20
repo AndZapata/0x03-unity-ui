@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
 
     public void Update()
     {
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Pickup")
         {
             score = score + 1;
-            Debug.Log("Score: " + score);
+            SetScoreText();
             Destroy(other.gameObject);
         }
         if (other.tag == "Trap")
@@ -44,5 +46,10 @@ public class PlayerController : MonoBehaviour
         }
         if (other.tag == "Goal")
             Debug.Log("You win!");
+    }
+
+    void SetScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
     }
 }

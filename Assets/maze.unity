@@ -7867,6 +7867,7 @@ MonoBehaviour:
   speed: 1000
   rb: {fileID: 2118594326}
   health: 5
+  scoreText: {fileID: 282478561}
 --- !u!1001 &2122195254
 PrefabInstance:
   m_ObjectHideFlags: 0
