@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     public int health = 5;
     public Text scoreText;
+    public Text healthText;
 
     public void Update()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Trap")
         {
             health = health - 1;
-            Debug.Log("Health: " + health);
+            SetHealthText();
         }
         if (other.tag == "Goal")
             Debug.Log("You win!");
@@ -51,5 +52,10 @@ public class PlayerController : MonoBehaviour
     void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health: " + health.ToString();
     }
 }
