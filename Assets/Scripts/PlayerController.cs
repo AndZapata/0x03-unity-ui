@@ -17,13 +17,18 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         if (health == 0)
-            {
-                winLoseBG.color = Color.red;
-                winLoseBG.gameObject.SetActive(true);
-                winLoseText.color = Color.white;
-                winLoseText.text = "Game Over!";
-                StartCoroutine(LoadScene(3));
-            }
+        {
+            winLoseBG.color = Color.red;
+            winLoseBG.gameObject.SetActive(true);
+            winLoseText.color = Color.white;
+            winLoseText.text = "Game Over!";
+            StartCoroutine(LoadScene(3));
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     public void FixedUpdate()
     {
